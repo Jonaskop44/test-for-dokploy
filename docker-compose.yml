@@ -1,7 +1,6 @@
 services:
   web:
     image: nginx:alpine
-    privileged: true
     ports:
       - "8080:80"
   db:
@@ -12,8 +11,6 @@ services:
       - "5432:5432"
     volumes:
       - dbdata:/var/lib/postgresql/data
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /etc:/host-etc
 
 volumes:
   dbdata:
